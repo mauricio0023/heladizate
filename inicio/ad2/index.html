@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heladízate - 30 Recetas de Helado Artesanal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            padding-top: 48px; /* Space for countdown banner */
+        }
+        h1, h2, h3, .font-fredoka {
+            font-family: 'Fredoka One', cursive;
+        }
+        .bg-vino-gourmet { background-color: #9C1446; }
+        .text-vino-gourmet { color: #9C1446; }
+        .border-vino-gourmet { border-color: #9C1446; }
+        .bg-rosa-terroso { background-color: #9C5D74; }
+        .text-rosa-terroso { color: #9C5D74; }
+        .bg-verde-fresco { background-color: #1F9C14; }
+        .text-verde-fresco { color: #1F9C14; }
+        .border-verde-fresco { border-color: #1F9C14; }
+        .hover-bg-rosa-terroso:hover { background-color: #9C5D74; }
+        .bg-gris-suave { background-color: #F5F5F5; }
+        .section-container {
+            max-width: 1140px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+        .cta-button {
+            transition: background-color 0.3s ease;
+        }
+        .faq-item {
+            transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+            max-height: 4rem;
+            overflow: hidden;
+        }
+        .faq-item.open {
+            max-height: 500px;
+        }
+        #fomo-popup {
+            transition: transform 0.5s ease-in-out;
+            transform: translateX(-150%);
+        }
+        #fomo-popup.show {
+            transform: translateX(0);
+        }
+        #whatsapp-bubble {
+            transition: opacity 0.5s ease-in-out;
+        }
+        #whatsapp-bubble.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- COUNTDOWN BANNER -->
+    <div id="countdown-banner" class="fixed top-0 left-0 right-0 bg-red-600 text-white text-center p-3 font-bold z-50 shadow-lg">
+        <span>PÁGINA 2: <span id="countdown-timer">09:00:00</span></span>
+    </div>
+
+    <!-- SECCIÓN HERO -->
+    <header class="bg-cover bg-center text-white" style="background-image: url('https://i.postimg.cc/65JK7qW5/HERO-1.webp');">
+        <div class="bg-black bg-opacity-50 py-16 md:py-24">
+            <div class="section-container text-center">
+                <img src="https://i.postimg.cc/X7SWZqj4/LOGO.webp" alt="Logo Heladízate" class="mx-auto mb-8 h-24">
+                <h1 class="text-4xl md:text-6xl font-fredoka mb-4 leading-tight">¿Listo para transformar tu cocina en una heladería artesanal?</h1>
+                <p class="text-lg md:text-xl mb-6 max-w-3xl mx-auto">Con Heladízate, descubre cómo preparar 30 recetas irresistibles de helado artesanal con técnica profesional, ingredientes naturales y un toque creativo que hará que todos te pidan una bola más.</p>
+                <p class="mb-8 max-w-3xl mx-auto">No importa si eres un amante de los postres, un curioso de la cocina o alguien que sueña con emprender: este ebook es tu pase directo al mundo de los helados perfectos.</p>
+                <div class="bg-white text-gray-800 p-4 rounded-lg shadow-lg max-w-2xl mx-auto mb-8">
+                    <p class="text-xl font-bold text-vino-gourmet">Accede hoy mismo al contenido completo + 3 bonos exclusivos por solo $6 <span class="line-through text-gray-500">(precio normal $24)</span>.</p>
+                </div>
+                <a href="#" class="cta-button bg-verde-fresco hover-bg-rosa-terroso text-white font-bold text-xl py-4 px-10 rounded-lg shadow-lg inline-block">¡QUIERO MI EBOOK AHORA!</a>
+                <p class="mt-4 text-sm">Compra Segura | Garantía de Satisfacción | Acceso Inmediato</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- SECCIÓN EL PROBLEMA -->
+        <section class="py-16 md:py-24">
+            <div class="section-container text-center">
+                <h2 class="text-3xl md:text-4xl font-fredoka text-vino-gourmet mb-4">Seamos honestos...</h2>
+                <p class="text-lg md:text-xl text-rosa-terroso mb-12 max-w-3xl mx-auto">¿cuántas veces has querido preparar helados caseros y terminas con algo muy lejos de lo que imaginaste?</p>
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2 p-8">
+                        <img src="https://i.postimg.cc/VkzcRhbQ/PROBLEMA.webp" alt="Helado cristalizado" class="rounded-lg shadow-xl w-full border-2 border-vino-gourmet transition-transform duration-300 ease-in-out rotate-[-20deg] hover:rotate-0">
+                    </div>
+                    <div class="md:w-1/2 text-left space-y-4">
+                        <div class="flex items-start gap-4">
+                            <svg class="w-6 h-6 text-vino-gourmet mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <p>Helados que se cristalizan y parecen hielo picado.</p>
+                        </div>
+                        <div class="flex items-start gap-4">
+                             <svg class="w-6 h-6 text-vino-gourmet mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <p>Recetas de internet confusas, sin técnica ni explicación clara.</p>
+                        </div>
+                        <div class="flex items-start gap-4">
+                             <svg class="w-6 h-6 text-vino-gourmet mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <p>Resultados planos, sin esa cremosidad que enamora.</p>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <svg class="w-6 h-6 text-vino-gourmet mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <p>Ingredientes industriales llenos de químicos y sabor artificial.</p>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <svg class="w-6 h-6 text-vino-gourmet mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <p>Tiempo y dinero invertidos... para obtener un postre mediocre.</p>
+                        </div>
+                    </div>
+                </div>
+                 <p class="mt-12 text-lg max-w-4xl mx-auto">La frustración es real: intentas sorprender a tu familia o amigos, pero terminas pensando que solo en las heladerías se pueden lograr esos sabores. <strong class="text-vino-gourmet">Heladízate cambia eso para siempre.</strong></p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN LA SOLUCIÓN -->
+        <section class="bg-gris-suave py-16 md:py-24">
+            <div class="section-container">
+                <div class="text-center mb-12">
+                     <span class="text-sm font-bold tracking-wider text-rosa-terroso uppercase">EL MÉTODO HELADÍZATE</span>
+                    <h2 class="text-3xl md:text-4xl font-fredoka text-vino-gourmet mt-2">Presentamos Heladízate: 30 Recetas de Helado Artesanal</h2>
+                    <p class="mt-4 text-lg max-w-3xl mx-auto">Este no es un simple recetario. Es un manual práctico y profesional creado por Lucía Montañez, chef repostera formada en la Escuela Gastronómica de Barcelona.</p>
+                </div>
+
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/3">
+                        <img src="https://i.postimg.cc/L8mMTWg3/PORTADA-MOCKUP-1-1.webp" alt="Ebook Heladízate" class="rounded-lg shadow-xl w-full">
+                    </div>
+                    <div class="md:w-2/3">
+                         <h3 class="text-2xl font-bold text-vino-gourmet mb-6">Con Heladízate aprenderás:</h3>
+                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left">
+                            <div class="bg-white p-6 rounded-lg border-l-4 border-vino-gourmet shadow-md">
+                                <p class="font-semibold">La técnica básica de balance y textura para lograr helados perfectos.</p>
+                            </div>
+                             <div class="bg-white p-6 rounded-lg border-l-4 border-vino-gourmet shadow-md">
+                                <p class="font-semibold">Cómo crear helados cremosos sin necesidad de máquina industrial.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg border-l-4 border-vino-gourmet shadow-md">
+                                <p class="font-semibold">A usar ingredientes naturales y saludables sin sacrificar sabor.</p>
+                            </div>
+                             <div class="bg-white p-6 rounded-lg border-l-4 border-vino-gourmet shadow-md">
+                                <p class="font-semibold">A dominar recetas clásicas, frutales, gourmet, veganas y étnicas.</p>
+                            </div>
+                             <div class="bg-white p-6 rounded-lg border-l-4 border-vino-gourmet shadow-md">
+                                <p class="font-semibold">A presentar y conservar tus creaciones como un verdadero profesional.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg border-l-4 border-vino-gourmet shadow-md">
+                                 <p class="font-semibold">Diseñado para todos los niveles, explicado paso a paso con claridad.</p>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+                 <div class="text-center mt-12">
+                    <a href="#" class="cta-button bg-verde-fresco hover-bg-rosa-terroso text-white font-bold text-xl py-4 px-10 rounded-lg shadow-lg inline-block">QUIERO APRENDER EL MÉTODO AHORA</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN LO QUE LOGRARÁS -->
+        <section class="py-16 md:py-24">
+            <div class="section-container">
+                <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+                    <!-- Text Column -->
+                    <div class="md:w-1/2 text-left">
+                        <h2 class="text-3xl md:text-4xl font-fredoka text-vino-gourmet mb-6">Imagina lo que pasará después de aplicar lo que aprenderás...</h2>
+                        <ul class="space-y-4 text-gray-700">
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-verde-fresco mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <span><strong>Sorprenderás a familiares y amigos</strong> con postres únicos y memorables.</span>
+                            </li>
+                             <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-verde-fresco mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <span>Disfrutarás de helados <strong>cremosos, saludables y sin químicos</strong>, hechos en casa.</span>
+                            </li>
+                             <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-verde-fresco mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <span>Tendrás recetas para todos los gustos: desde vainilla clásica hasta <strong>lavanda con miel</strong> o matcha gourmet.</span>
+                            </li>
+                             <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-verde-fresco mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <span>Podrás <strong>experimentar con sabores creativos</strong> y personalizar tus propias combinaciones.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-verde-fresco mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <span>Si lo deseas, <strong>iniciarás tu propio emprendimiento</strong> gastronómico desde casa.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-verde-fresco mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <span>Sentirás orgullo al <strong>dominar una técnica profesional</strong> con utensilios comunes.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Carousel Column -->
+                    <div class="md:w-1/2 w-full">
+                        <div id="image-carousel" class="relative overflow-hidden rounded-lg shadow-2xl">
+                            <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out">
+                                <!-- Images will be injected here by JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECCIÓN BENEFICIOS VISUALES -->
+        <section class="py-16 md:py-24 bg-gris-suave">
+            <div class="section-container">
+                 <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-fredoka text-vino-gourmet">Beneficios que Saben a Gloria</h2>
+                    <p class="mt-4 text-lg max-w-3xl mx-auto text-rosa-terroso">Descubre todo lo que Heladízate te permite lograr.</p>
+                </div>
+
+                <!-- Desktop Layout -->
+                <div class="hidden md:block relative w-full max-w-5xl mx-auto" style="height: 550px;">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <img src="https://i.postimg.cc/DZwQhLVS/sts-Svmeyjxz-K-l-Dh-Paixs.png" alt="Helado de Fresa Artesanal" class="w-auto h-full max-h-96 rounded-full shadow-2xl">
+                    </div>
+                    
+                    <!-- Benefit Bubbles -->
+                    <div class="absolute p-5 rounded-lg bg-white text-gray-800 shadow-xl text-left w-64" style="top: 0%; left: 18%;">
+                        <h3 class="font-bold font-fredoka text-vino-gourmet">Sorprende a Todos</h3>
+                        <p class="text-sm">Crea postres únicos y memorables para tu familia y amigos.</p>
+                    </div>
+                     <div class="absolute p-5 rounded-lg bg-white text-gray-800 shadow-xl text-left w-64" style="top: 40%; left: 0%;">
+                        <h3 class="font-bold font-fredoka text-vino-gourmet">Sabor 100% Natural</h3>
+                        <p class="text-sm">Disfruta helados saludables, sin químicos ni aditivos.</p>
+                    </div>
+                     <div class="absolute p-5 rounded-lg bg-white text-gray-800 shadow-xl text-left w-64" style="bottom: 0%; left: 18%;">
+                        <h3 class="font-bold font-fredoka text-vino-gourmet">Infinidad de Sabores</h3>
+                        <p class="text-sm">Domina recetas clásicas, gourmet y hasta veganas.</p>
+                    </div>
+
+                     <div class="absolute p-5 rounded-lg bg-white text-gray-800 shadow-xl text-left w-64" style="top: 0%; right: 18%;">
+                        <h3 class="font-bold font-fredoka text-vino-gourmet">Tu Toque Creativo</h3>
+                        <p class="text-sm">Experimenta y personaliza tus propias combinaciones.</p>
+                    </div>
+                     <div class="absolute p-5 rounded-lg bg-white text-gray-800 shadow-xl text-left w-64" style="top: 40%; right: 0%;">
+                        <h3 class="font-bold font-fredoka text-vino-gourmet">Emprende tu Sueño</h3>
+                        <p class="text-sm">Inicia tu propio negocio de helados artesanales desde casa.</p>
+                    </div>
+                    <div class="absolute p-5 rounded-lg bg-white text-gray-800 shadow-xl text-left w-64" style="bottom: 0%; right: 18%;">
+                        <h3 class="font-bold font-fredoka text-vino-gourmet">Técnica Profesional</h3>
+                        <p class="text-sm">Domina los secretos de la heladería con utensilios comunes.</p>
+                    </div>
+                </div>
+                
+                <!-- Mobile Layout -->
+                <div class="md:hidden">
+                     <img src="https://i.postimg.cc/DZwQhLVS/sts-Svmeyjxz-K-l-Dh-Paixs.png" class="w-full max-w-xs mx-auto rounded-full shadow-lg mb-8">
+                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="p-6 rounded-lg bg-white shadow-xl text-center">
+                             <h3 class="font-bold font-fredoka text-xl text-vino-gourmet">Sorprende a Todos</h3>
+                             <p>Crea postres únicos y memorables para tu familia y amigos.</p>
+                        </div>
+                        <div class="p-6 rounded-lg bg-white shadow-xl text-center">
+                             <h3 class="font-bold font-fredoka text-xl text-vino-gourmet">Sabor 100% Natural</h3>
+                             <p>Disfruta helados saludables, sin químicos ni aditivos.</p>
+                        </div>
+                         <div class="p-6 rounded-lg bg-white shadow-xl text-center">
+                             <h3 class="font-bold font-fredoka text-xl text-vino-gourmet">Infinidad de Sabores</h3>
+                             <p>Domina recetas clásicas, gourmet y hasta veganas.</p>
+                        </div>
+                         <div class="p-6 rounded-lg bg-white shadow-xl text-center">
+                             <h3 class="font-bold font-fredoka text-xl text-vino-gourmet">Tu Toque Creativo</h3>
+                             <p>Experimenta y personaliza tus propias combinaciones.</p>
+                        </div>
+                         <div class="p-6 rounded-lg bg-white shadow-xl text-center">
+                             <h3 class="font-bold font-fredoka text-xl text-vino-gourmet">Emprende tu Sueño</h3>
+                             <p>Inicia tu propio negocio de helados artesanales desde casa.</p>
+                        </div>
+                         <div class="p-6 rounded-lg bg-white shadow-xl text-center">
+                             <h3 class="font-bold font-fredoka text-xl text-vino-gourmet">Técnica Profesional</h3>
+                             <p>Domina los secretos de la heladería con utensilios comunes.</p>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN BONOS EXCLUSIVOS -->
+        <section class="py-16 md:py-24 bg-white">
+            <div class="section-container">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-fredoka text-vino-gourmet">Al adquirir Heladízate hoy, te llevas GRATIS estos 3 bonos de alto valor:</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <!-- Bono 1 -->
+                    <div class="bg-gris-suave p-6 rounded-lg shadow-lg border-t-4 border-vino-gourmet">
+                        <img src="https://i.postimg.cc/VLQwSvf6/MOCKUP-BONO-1-1.webp" alt="Bono 1: Lanza tu marca" class="w-full rounded-md mb-6 shadow-md">
+                        <h3 class="text-xl font-fredoka text-vino-gourmet">BONO #1: Lanza tu propia marca de helados en 7 días</h3>
+                        <p class="mt-2 text-gray-600">Guía práctica para crear tu identidad visual (nombre, paleta de colores, logo básico) sin necesidad de diseñador.</p>
+                        <p class="mt-4 font-bold bg-verde-fresco text-white py-1 px-3 rounded-full inline-block">Valor: $12 | Hoy Gratis</p>
+                    </div>
+                    
+                    <!-- Bono 2 -->
+                    <div class="bg-gris-suave p-6 rounded-lg shadow-lg border-t-4 border-vino-gourmet">
+                        <img src="https://i.postimg.cc/KvP2tbjP/MOCKUP-BONO-2.webp" alt="Bono 2: Fotografía de helados" class="w-full rounded-md mb-6 shadow-md">
+                        <h3 class="text-xl font-fredoka text-vino-gourmet">BONO #2: Guía de fotografía casera para helados atractivos</h3>
+                        <p class="mt-2 text-gray-600">Aprende a iluminar, componer y capturar fotos irresistibles con tu celular. Incluye apps y plantillas para planificar tus sesiones.</p>
+                        <p class="mt-4 font-bold bg-verde-fresco text-white py-1 px-3 rounded-full inline-block">Valor: $12 | Hoy Gratis</p>
+                    </div>
+                    
+                    <!-- Bono 3 -->
+                    <div class="bg-gris-suave p-6 rounded-lg shadow-lg border-t-4 border-vino-gourmet">
+                        <img src="https://i.postimg.cc/BQT023bC/MOCKUP-BONO-3.webp" alt="Bono 3: Comunidad WhatsApp" class="w-full rounded-md mb-6 shadow-md">
+                        <h3 class="text-xl font-fredoka text-vino-gourmet">BONO #3: Acceso privado a la comunidad en WhatsApp</h3>
+                        <p class="mt-2 text-gray-600">Comparte avances, resuelve dudas, recibe feedback y conecta con personas que también están creando helados artesanales.</p>
+                        <p class="mt-4 font-bold bg-verde-fresco text-white py-1 px-3 rounded-full inline-block">Valor: $12 | Hoy Gratis</p>
+                    </div>
+                </div>
+                
+                <p class="text-center mt-12 text-xl font-bold text-gray-700">En total, <span class="text-verde-fresco">$36 en bonos</span> que hoy recibes sin costo adicional.</p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN OFERTA -->
+        <section class="py-16 md:py-24 bg-gris-suave">
+            <div class="section-container">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-fredoka text-vino-gourmet">Tu oportunidad de aprender el arte del helado artesanal</h2>
+                    <p class="mt-4 text-lg max-w-3xl mx-auto text-rosa-terroso">...a un precio ridículamente bajo.</p>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-8 items-stretch">
+                    <!-- Card 1: Imagen -->
+                    <div class="relative md:w-1/2 bg-white rounded-lg shadow-xl p-6 pt-12 border-2 border-dashed border-verde-fresco flex flex-col justify-center items-center text-center mt-8 md:mt-0">
+                       <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-verde-fresco text-white font-bold uppercase py-2 px-8 rounded-full shadow-lg">
+                           Oferta Especial
+                       </div>
+                       <h3 class="text-2xl font-fredoka text-vino-gourmet mb-12">Tu Kit Completo para el Éxito Heladero</h3>
+                       <img src="https://i.postimg.cc/mgTGwn1N/OFERTA.webp" alt="Pack de oferta Heladízate" class="rounded-lg w-full mb-12">
+                       <p class="text-gray-600">Más que un ebook, es tu transformación de aficionado a experto. Todo el conocimiento, las recetas y las herramientas en un solo lugar.</p>
+                    </div>
+
+                    <!-- Card 2: Contenido de la oferta -->
+                     <div class="relative overflow-hidden md:w-1/2 bg-white rounded-lg shadow-xl p-8 border-2 border-vino-gourmet flex flex-col">
+                        <div class="absolute top-4 -right-11 transform rotate-45 bg-vino-gourmet text-white font-bold uppercase py-1 px-8 text-center text-sm shadow-lg">
+                            70% OFF
+                        </div>
+                        <h3 class="text-2xl font-bold text-vino-gourmet mb-6 text-center">Esto es lo que te llevas HOY mismo:</h3>
+                        <ul class="space-y-4 mb-6 text-lg flex-grow">
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-verde-fresco mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <span><strong class="font-fredoka">Ebook completo Heladízate</strong> (30 recetas + técnica profesional) <span class="block text-sm text-gray-500">Valor: $24</span></span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-verde-fresco mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <span><strong class="font-fredoka">BONO #1:</strong> Lanza tu propia marca de helados en 7 días <span class="block text-sm text-gray-500">Valor: $12</span></span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-verde-fresco mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <span><strong class="font-fredoka">BONO #2:</strong> Guía de fotografía casera para helados atractivos <span class="block text-sm text-gray-500">Valor: $12</span></span>
+                            </li>
+                             <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-verde-fresco mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <span><strong class="font-fredoka">BONO #3:</strong> Acceso privado a la comunidad en WhatsApp <span class="block text-sm text-gray-500">Valor: $12</span></span>
+                            </li>
+                        </ul>
+                        <div class="text-center mt-auto">
+                            <p class="text-gray-500 text-lg">Valor total del paquete: <span class="line-through">$60</span></p>
+                            <p class="text-5xl font-fredoka text-verde-fresco my-2">HOY solo pagas $6</p>
+                            <p class="text-sm text-gray-500 mb-6">(precio normal $24)</p>
+                             <a href="#" class="cta-button bg-verde-fresco hover-bg-rosa-terroso text-white font-bold text-xl py-4 px-10 rounded-lg shadow-lg w-full inline-block">¡QUIERO MI ACCESO INMEDIATO!</a>
+                            <p class="mt-4 text-sm text-gray-600">Compra Segura | Garantía de Satisfacción | Acceso al Instante</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN PREGUNTAS FRECUENTES -->
+        <section class="bg-white py-16 md:py-24">
+            <div class="section-container">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-fredoka text-vino-gourmet">Preguntas Frecuentes</h2>
+                </div>
+                <div class="max-w-3xl mx-auto space-y-4">
+                    <div class="faq-item bg-gris-suave rounded-lg shadow-md border-l-4 border-rosa-terroso cursor-pointer" onclick="toggleFaq(this)">
+                        <div class="flex justify-between items-center p-6">
+                            <h3 class="text-lg font-semibold">¿Necesito una máquina para hacer helados?</h3>
+                            <svg class="w-6 h-6 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                        <div class="px-6 pb-6">
+                            <p>No. Te mostramos técnicas para lograr texturas cremosas con utensilios comunes de cocina.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item bg-gris-suave rounded-lg shadow-md border-l-4 border-rosa-terroso cursor-pointer" onclick="toggleFaq(this)">
+                        <div class="flex justify-between items-center p-6">
+                            <h3 class="text-lg font-semibold">¿Cuánto tiempo necesito para preparar un helado?</h3>
+                             <svg class="w-6 h-6 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                        <div class="px-6 pb-6">
+                            <p>Depende de la receta, pero la mayoría se logra en menos de una hora (más el tiempo de enfriado).</p>
+                        </div>
+                    </div>
+                     <div class="faq-item bg-gris-suave rounded-lg shadow-md border-l-4 border-rosa-terroso cursor-pointer" onclick="toggleFaq(this)">
+                        <div class="flex justify-between items-center p-6">
+                            <h3 class="text-lg font-semibold">¿El ebook incluye recetas veganas o sin lactosa?</h3>
+                             <svg class="w-6 h-6 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                        <div class="px-6 pb-6">
+                            <p>Sí, incluye un capítulo completo con recetas veganas y sin lácteos que no sacrifican sabor ni textura.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item bg-gris-suave rounded-lg shadow-md border-l-4 border-rosa-terroso cursor-pointer" onclick="toggleFaq(this)">
+                        <div class="flex justify-between items-center p-6">
+                            <h3 class="text-lg font-semibold">¿Realmente puedo emprender con estas recetas?</h3>
+                             <svg class="w-6 h-6 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                        <div class="px-6 pb-6">
+                            <p>Claro. El Capítulo 8 está diseñado para guiarte en cómo vender desde casa, calcular precios y presentar tu producto como un profesional.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item bg-gris-suave rounded-lg shadow-md border-l-4 border-rosa-terroso cursor-pointer" onclick="toggleFaq(this)">
+                        <div class="flex justify-between items-center p-6">
+                            <h3 class="text-lg font-semibold">¿Qué pasa si no me funciona?</h3>
+                             <svg class="w-6 h-6 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                         <div class="px-6 pb-6">
+                            <p>Tienes 7 días de garantía. Si no logras resultados, te devolvemos tu dinero.</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="text-center mt-12">
+                    <a href="#" class="cta-button bg-verde-fresco hover-bg-rosa-terroso text-white font-bold text-xl py-4 px-10 rounded-lg shadow-lg inline-block">¡QUIERO APROVECHAR LA OFERTA AHORA!</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-vino-gourmet text-white py-12">
+        <div class="section-container text-center text-sm">
+            <div class="mb-4">
+                <a href="#" class="hover:underline mx-2">Términos de Uso</a>
+                <span class="mx-2">|</span>
+                <a href="#" class="hover:underline mx-2">Políticas de Privacidad</a>
+            </div>
+            <p class="mb-4 opacity-75 max-w-2xl mx-auto">Aviso importante: Este sitio no está afiliado ni respaldado por Facebook™, Instagram™ ni ninguna otra plataforma. Este producto no garantiza resultados. Los testimonios presentados reflejan experiencias reales, pero los resultados dependen de la aplicación y constancia de cada persona.</p>
+            <p>&copy; 2024 Heladízate - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- FOMO POPUP -->
+    <div id="fomo-popup" class="fixed bottom-8 left-8 bg-white p-4 rounded-lg shadow-2xl border-l-4 border-vino-gourmet z-50">
+        <p><strong id="fomo-name"></strong> de <strong id="fomo-country"></strong></p>
+        <p class="text-sm text-gray-600">acaba de adquirir Heladízate.</p>
+    </div>
+
+
+    <!-- WHATSAPP BUTTON -->
+    <div class="fixed bottom-8 right-8 z-50">
+        <div id="whatsapp-bubble" class="absolute bottom-full right-0 mb-2 bg-white text-gray-800 py-2 px-4 rounded-lg shadow-lg whitespace-nowrap opacity-0">
+            ¿Tienes preguntas?
+            <div class="absolute bottom-0 right-4 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-8 border-t-white transform translate-y-full"></div>
+        </div>
+        <a href="https://wa.me/438573495" target="_blank" class="block w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform duration-300">
+            <svg class="w-9 h-9 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.433-9.89-9.889-9.89-5.452 0-9.887 4.428-9.889 9.891.001 2.23.652 4.395 1.846 6.24l-.525 1.922 1.996-.52z"/></svg>
+        </a>
+    </div>
+
+
+    <script>
+        function toggleFaq(element) {
+            const allFaqs = document.querySelectorAll('.faq-item');
+            const wasOpen = element.classList.contains('open');
+
+            allFaqs.forEach(faq => {
+                faq.classList.remove('open');
+                faq.querySelector('svg').style.transform = 'rotate(0deg)';
+            });
+
+            if (!wasOpen) {
+                element.classList.add('open');
+                element.querySelector('svg').style.transform = 'rotate(180deg)';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Carousel Script ---
+            const carouselTrack = document.getElementById('carousel-track');
+            if(carouselTrack) {
+                const images = [
+                    'https://i.postimg.cc/DZwQhLVS/sts-Svmeyjxz-K-l-Dh-Paixs.png',
+                    'https://i.postimg.cc/15GKp9Ky/rcdpte-b-E2cx6xa37iz-WZ.png',
+                    'https://i.postimg.cc/YSsNpjpH/fc-Xav-RF0-Bv-KY6-HXCt-LVyk.png',
+                    'https://i.postimg.cc/NMp0hCm2/APBu-Bx3-Kw-SANKSh-Eip-Sqn.png'
+                ];
+                let currentCarouselIndex = 0;
+
+                images.forEach(src => {
+                    const imgContainer = document.createElement('div');
+                    imgContainer.className = 'w-full flex-shrink-0 p-1'; // Added padding for border visibility
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.alt = 'Helado artesanal delicioso';
+                    img.className = 'w-full h-auto rounded-lg border-2 border-vino-gourmet';
+                    imgContainer.appendChild(img);
+                    carouselTrack.appendChild(imgContainer);
+                });
+
+                function nextSlide() {
+                    currentCarouselIndex = (currentCarouselIndex + 1) % images.length;
+                    carouselTrack.style.transform = `translateX(-${currentCarouselIndex * 100}%)`;
+                }
+                setInterval(nextSlide, 3000);
+            }
+
+            // --- Countdown Timer ---
+            function startCountdown() {
+                const countdownElement = document.getElementById('countdown-timer');
+                if (!countdownElement) return;
+                let timeInSeconds = 9 * 60 * 60;
+
+                const timer = setInterval(() => {
+                    if (timeInSeconds <= 0) {
+                        clearInterval(timer);
+                        document.getElementById('countdown-banner').innerHTML = '¡La oferta ha terminado!';
+                        return;
+                    }
+                    timeInSeconds--;
+                    const hours = Math.floor(timeInSeconds / 3600);
+                    const minutes = Math.floor((timeInSeconds % 3600) / 60);
+                    const seconds = timeInSeconds % 60;
+                    countdownElement.textContent = 
+                        `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+                }, 1000);
+            }
+
+            // --- WhatsApp Bubble ---
+            function showWhatsAppBubble() {
+                const bubble = document.getElementById('whatsapp-bubble');
+                if (bubble) {
+                    setTimeout(() => {
+                        bubble.classList.add('show');
+                    }, 10000); // 10 seconds
+                }
+            }
+
+            // --- FOMO Popup ---
+            function startFomo() {
+                const popup = document.getElementById('fomo-popup');
+                const nameElement = document.getElementById('fomo-name');
+                const countryElement = document.getElementById('fomo-country');
+                
+                if (!popup || !nameElement || !countryElement) return;
+
+                const names = ["Ana", "Sofía", "Camila", "Valentina", "Isabella", "Mariana", "Lucía", "Daniela", "Gabriela", "Valeria", "María", "Paula", "Elena", "Martina", "Carla"];
+                const countries = ["España", "México", "Argentina", "Colombia", "Perú", "Chile", "Ecuador", "Venezuela", "Bolivia", "Uruguay", "Paraguay", "Costa Rica", "Guatemala"];
+
+                function showFomo() {
+                    const randomName = names[Math.floor(Math.random() * names.length)];
+                    const randomCountry = countries[Math.floor(Math.random() * countries.length)];
+                    nameElement.textContent = randomName;
+                    countryElement.textContent = randomCountry;
+                    popup.classList.add('show');
+
+                    setTimeout(() => {
+                        popup.classList.remove('show');
+                    }, 5000);
+
+                    const randomInterval = Math.floor(Math.random() * 10000) + 8000;
+                    setTimeout(showFomo, randomInterval);
+                }
+                setTimeout(showFomo, 20000);
+            }
+
+            // --- Initialize all scripts ---
+            startCountdown();
+            showWhatsAppBubble();
+            startFomo();
+        });
+
+    </script>
+</body>
+</html>
+
